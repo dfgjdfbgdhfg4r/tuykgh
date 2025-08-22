@@ -1,9 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Puppeteer Overlay Remover</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+    }
+    pre {
+      background-color: #2d2d2d;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    code {
+      color: #9cdcfe;
+    }
+  </style>
+</head>
+<body>
+  <h1>Puppeteer Script to Remove Overlay</h1>
+  <p>This Node.js script uses Puppeteer to remove an overlay element from a webpage and take a screenshot:</p>
+  <pre><code>
 const puppeteer = require('puppeteer');
 
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('https://youtube.com');
+  await page.goto('https://example.com');
 
   // Remove overlay by targeting its selector
   await page.evaluate(() => {
@@ -13,4 +40,7 @@ const puppeteer = require('puppeteer');
 
   await page.screenshot({ path: 'cleaned.png' });
   await browser.close();
-})()
+})();
+  </code></pre>
+</body>
+</html>
